@@ -27,24 +27,32 @@ namespace Exemplo3
         int num2;
         int a;
         int b;
-        
+        string var;
 
         string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
+
+
         public MainPage()
         {
             InitializeComponent();
 
-            num1 = rnd.Next(10000, 99999);
-            num2 = rnd.Next(10000, 99999);
-            
-            File.WriteAllText(fileName, Convert.ToString(num1) + " " + Convert.ToString(num2));
+            try { var = File.ReadAllText(fileName); }
+          
+            catch (System.IO.FileNotFoundException)
+            {
+                num1 = rnd.Next(10000, 99999);
+                num2 = rnd.Next(10000, 99999);
+
+                File.WriteAllText(fileName, Convert.ToString(num1) + " " + Convert.ToString(num2));
+            }
+
 
 
             string[] lines = File.ReadAllLines(fileName);
            
 
 
-            string line = lines[0];
+                string line = lines[0];
                 string[] parts = line.Split(' ');
                  a = int.Parse(parts[0]);
                  b = int.Parse(parts[1]);
