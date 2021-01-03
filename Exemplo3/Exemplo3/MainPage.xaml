@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exemplo3.MainPage"
+             Title="Ex 3">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Toolbar" Clicked="Toolbar_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+    <StackLayout>
+
+
+            <Frame BackgroundColor="Gray" Padding="24" CornerRadius="0">
+                <Label Text="Exemplo 3" HorizontalTextAlignment="Center" TextColor="Black" FontSize="30"/>
+            </Frame>
+
+            <Label x:Name="output" FontSize="Title"  Text="0 0" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+            <Label x:Name="output2" FontSize="Title"  Text="0 0" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
