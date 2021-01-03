@@ -51,7 +51,7 @@ namespace Exemplo3
 
            
 
-            Toolbar.IconImageSource = ImageSource.FromResource("Exemplo3.resources.start.png");
+            Toolbar.IconImageSource = ImageSource.FromResource("Exemplo3.resources.startstop.png");
 
             output.Text = "1º numero: " + Convert.ToString(a);
             output2.Text = "2º numero: " + Convert.ToString(b);
@@ -62,8 +62,20 @@ namespace Exemplo3
 
         private void Toolbar_Clicked(object sender, EventArgs e)
         {
-          
-            Task.Run(globaltask);
+            if (run == false) {
+
+                run = true;
+                Task.Run(globaltask);
+
+            }
+
+            else
+            {
+                run = false;
+                Task.Run(globaltask);
+
+            }
+            
         }
 
 
@@ -72,7 +84,7 @@ namespace Exemplo3
         {
             try
             {
-                while (b>0)
+                while (run)
                 {
 
                     var inc = addnum();

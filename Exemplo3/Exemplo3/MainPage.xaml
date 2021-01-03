@@ -5,7 +5,7 @@
              Title="Ex 3">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="Toolbar" Clicked="Toolbar_Clicked"/>
+        <ToolbarItem x:Name="Toolbar"  Clicked="Toolbar_Clicked" />
     </ContentPage.ToolbarItems>
 
 
